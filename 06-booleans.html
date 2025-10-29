@@ -53,6 +53,8 @@
     //Falsy(0, '', undefined, NaN, null) are list of Falsy values
     // anything else that is not on that list is Truthy.
 
+
+    /*
     if (-1) {
       console.log('truthy');
     }
@@ -66,6 +68,23 @@
     console.log(!3);
     console.log('hello' / 6);
 
+    const result = 0 ? 'truthy' : 'falsy';
+    console.log(result);
+
+
+    //Guard Operator &&
+    false && console.log('hello');
+    
+    const message = 5 && 'hello';
+    console.log(message);
+
+    // Default Operator || used to set the default value.
+    const currency = 'EUR' || 'USD';
+    console.log(currency);
+
+    const moneyValue = undefined || 'FRW';
+    console.log(moneyValue);
+    */
   </script>
 </body>
 </html>
