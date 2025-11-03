@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparizon</title>
+</head>
+<body>
+  <script>
+    function comparePrice(amazonPdt1, amazonPdt2){
+      if(amazonPdt1.price > amazonPdt2.price){
+        return amazonPdt1;
+      }else {
+        return amazonPdt2;
+      }
+    }
+
+    const amazonPdt1 = {
+      product: 'bassketball',
+      price: 2095
+    };
+
+    const amazonPdt2 = {
+      product: 'phone',
+      price: 2999
+    };
+
+    console.log(comparePrice(amazonPdt1, amazonPdt2));
+  </script>
+</body>
+</html>
