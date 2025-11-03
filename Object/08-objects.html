@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    /*
+   //Object groups multiple values together. 
+   const items = {
+    name: 'iPhone 14 pro max',
+    price: 1200,
+    date: 2023,
+    month: 'September'
+   };
+
+   console.log(items);
+   console.log(items.price);
+
+   items.name = 'iWatch 10 series';
+   console.log(items);
+
+   items.newProduct = 'jocker';
+   console.log(items);
+
+   delete items.newProduct;
+   console.log(items);
+   */
+
+   /*
+   const product2 = {
+    name: 'shirt',
+    'deliverying-time' : '1 day',
+    rating: {
+      stars: 4.5,
+      count: 87
+    },
+    fun: function function1(){
+      console.log('function inside object');
+    }
+
+  
+
+   };
+    //different ways of calling a function
+   console.log(product2);
+   console.log(product2.name);
+   console.log(product2['name']);
+   console.log(product2['deliverying-time']);
+
+   console.log(product2.rating.count);
+   product2.fun();
+
+   console.log(typeof console.log)
+
+   //converting JavaScript Object to JSON
+   console.log(JSON.stringify(product2));
+
+   //converting JSON to JavaScript Object
+
+   const jsonstring = JSON.stringify(product2);
+   console.log(JSON.parse(jsonstring));
+
+
+   // Next built-in object: 
+   //locaStorage(save values more permanently)
+   //saving using variables is temporary
+
+   localStorage.setItem('message', 'hello');
+  */
+
+  //Auto-Boxing
+    console.log('hello'.length);
+    console.log('hello'. toUpperCase());
+    console.log('hello'. toLowerCase());
+
+  //objects are refferences(object somewhere else in the computer's memory)
+  const object1 = {
+    message: 'hello'
+  };
+
+  const object2 = object1; //object refference
+
+  object1.message = 'Good job!';
+  console.log(object1);
+  console.log(object2);
+
+  const object3 = {
+    message: 'Good job!'
+  };
+  console.log(object3 === object1); // objects can't be compared
+
+  const object4 = {
+    message: 'Good job!',
+    price: 999
+  };
+
+  //shortcut
+  //const message = object4.message;
+  const{ message, price } = object4;
+  console.log(message);
+  console.log(price); // destruction shortcut
+                      //easier way to take properties out of an object
+  
+  // shorthand property
+  const object5 = {
+    //message: message
+    message,
+   // method: function function1(){
+  //  console.log('method');
+   // }
+    method() {
+      console.log('method'); //shorthand methos syntax
+    }
+  };
+  
+  console.log(object5);
+
+
+  </script>
+</body>
+</html> 
