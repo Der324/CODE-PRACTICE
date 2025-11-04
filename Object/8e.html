@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8e-Exercise</title>
+</head>
+<body>
+  <script>
+    function isSameProduct(amazonPdt1, amazonPdt2) {
+      if(amazonPdt1.name === amazonPdt2.name &&
+        amazonPdt1.price === amazonPdt2.price) {
+          return true;
+        }else {
+          return false;
+        }
+    }
+
+    const amazonPdt1 = {
+      product: 'basketball',
+      price: 2999
+    };
+
+    const amazonPdt2 = {
+      product: 'phone',
+      price: 1999
+    };
+
+    const amazonPdt3 = {
+      product: 'basketball',
+      price: 2999
+    };
+
+    console.log(isSameProduct(amazonPdt1, amazonPdt2));
+    console.log(isSameProduct(amazonPdt1, amazonPdt3));
+  </script>
+</body>
+</html>
