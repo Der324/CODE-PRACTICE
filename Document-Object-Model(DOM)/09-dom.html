@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  
+</head>
+<body>
+  <button>hello</button>
+  <button class="js-button">Second Button</button>
+
+
+  <script>
+    /*
+    //property document.title//
+    console.log(document.title);
+    document.title = 'Changed!';
+
+    //property document.body//
+    console.log(document.body);
+    console.log(typeof document.body)
+    //Note: the DOM combines JavaScript
+    //and HTML together.
+    // it also gives JAvaScript control of the webpage
+
+    console.log(document.body.innerHTML); //is another useful method of the property document.body.
+    //the innerHTML controls all the HTML inside the body.
+
+    document.body.innerHTML = 'Changed!';
+    //.innerHTML can be used to change all the HTML in the body with another code not just a string.
+
+    document.body.innerHTML = '<button>Well Done!</button>';
+    */
+
+    //method to use document.querySelector()
+    //reminder method = function saved inside an object.
+    //document.querySelector() lets us get ANY ELEMENT from the page and put it inside JavaScript.
+    
+    //Note: every HTML has a property .innerHTML
+
+    console.log(document.querySelector('button').innerHTML);
+
+    document.querySelector('button')
+      .innerHTML = 'Changed'; //it can also be used to changed part of HTML
+
+   // console.log(document.querySelector('.js-button'));
+
+    //you can also use const
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+
+    /* DOM = another built-in object
+    called "document object" */
+
+   /* document.body.innerHTML = 'Hello';
+    the  document object represents/models
+     the webpage. aka Document Object Model (DOM) 
+    document.title = 'Good Job!';*/
+
+
+
+  </script>
+</body>
+</html> 
