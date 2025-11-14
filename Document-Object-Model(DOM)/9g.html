@@ -41,10 +41,11 @@
 
 
     /*
-      9g) Issue = the cul
-
-    
+      9g) solving the inaccurate calculation
+      Fix = calculate the number in cents and then 
+      convert back to dollars at the end.
     */
+
     function calculateTotal() {
       const inputElement = document.querySelector
       ('.js-cost-input');
@@ -54,7 +55,7 @@
       if (cost < 40) {
         cost = cost + 1000;
       }
-
+      //Converting back to dollars at the end.
       document.querySelector('.js-total-cost')
         .innerHTML = `$${cost / 100}`;
 
