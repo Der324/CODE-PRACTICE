@@ -9,9 +9,15 @@
   <script>
     function removeEgg(foods) {
   
-      const foodsCopy = foods.slice(); // Create a copy to avoid mutating the original array (photocopy of the array)
+      const foodsCopy = foods.slice(); 
+      // Create a copy to avoid mutating the original array (photocopy of the array)
+      // this protects the original array from being changed by reverse() method. 
 
       const reverseFoods = foodsCopy.reverse();
+      //only reverse the copy of the array.
+      // Reverse the copied array to facilitate removing the last occurrences.
+      // original array remains unchanged.
+      // This helps us to remove the last 2 eggs easily.
 
       const result = [];
       let eggsRemoved = 0;
@@ -24,6 +30,12 @@
           continue; 
         }
         result.push(reverseFoods[i]); 
+
+        //we go through the reversed copy of the array
+        // we skip (continue) the first 2 'egg's we find
+        // and add all other items to the result array.
+
+        // Deleting from the back, but using a trick: reversing the list first.
       }
       
       return result.reverse();
