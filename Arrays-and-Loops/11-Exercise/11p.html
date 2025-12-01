@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise2</title>
+</head>
+<body>
+  <script>
+    // Find the index of the first occurrence of 'cherry'(appears multiple times) in the array.
+    // If 'cherry' is not found, index remains -1.
+    let words = ['apple', 'banana', 'date', 'cherry', 'elderberry', 'cherry', 'cherry', 'cherry'];
+
+    let index = -1;
+
+    for (let i = 0; i < words.length; i++) {
+     if (words[i] === 'cherry') {
+       index = i;
+      // Exit the loop once the first occurrence is found 'cherry'
+      // break is used to stop/exit the loop.
+
+       break;
+       
+     }
+    }
+    console.log(index);
+
+    words = ['not', 'found'];
+
+    index = -1;
+
+    for (let i = 0; i < words.length; i++) {
+     if (words[i] === 'cherry') {
+       index = i; 
+        break;
+     }
+    }
+
+    console.log(index);
+  </script>
+</body>
+</html>

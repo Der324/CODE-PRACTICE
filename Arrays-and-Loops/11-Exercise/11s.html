@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function removeEgg(foods) {
+      const result = [];
+      let eggsRemoved = 0;
+
+
+      for (let i = 0; i < foods.length; i++) {
+        //only skip 'egg', if we remove less than 2 of them so far.
+
+        if (foods[i] === 'egg' && eggsRemoved < 2) {
+
+          //updating the counter of removed 'egg's  must be done before continue statement.
+          eggsRemoved++;
+          continue; // Skip 'egg'
+        }
+        result.push(foods[i]); // Add other items to the result array(push used to add an item to the end of an array)
+      }
+      return result;
+    }
+
+     console.log(removeEgg(['bread', 'egg', 'egg', 'milk', 'egg', 'cheese']));
+  </script>
+</body>
+</html>

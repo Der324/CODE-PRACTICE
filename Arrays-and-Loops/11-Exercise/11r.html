@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise4</title>
+</head>
+<body>
+  <script>
+    //takes an array of strings and returns an array where the string 'egg' has been removed.
+    function removeEgg(foods) {
+      const result = [];
+      for (let i = 0; i < foods.length; i++) {
+        //if the string is 'egg', use continue to skip it.
+        if (foods[i] === 'egg') {
+          continue; // Skip 'egg'
+        }
+        result.push(foods[i]); // Add other items to the result array(push used to add an item to the end of an array)
+      }
+      return result;
+    }
+    console.log(removeEgg(['bread', 'egg', 'egg', 'milk', 'egg', 'cheese']));
+    
+
+    /*
+    //if the array does not contain 'egg', add 'egg' to the end of the array.
+   function removeEgg(foods) {
+    const result = [];
+    let foundEgg = false;
+
+    for (let i = 0; i < foods.length; i++) {
+      if (foods[i] === 'egg') {
+        foundEgg = true;
+        continue;
+      }
+      result.push(foods[i]);
+    }
+    if (!foundEgg) {
+      result.push('egg');
+    }
+    return result;
+   }
+   console.log(removeEgg(['bread', 'egg', 'egg', 'milk', 'egg', 'cheese']));
+    console.log(removeEgg(['apple', 'ham',]));
+    */
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise6</title>
+</head>
+<body>
+  <script>
+    function removeEgg(foods) {
+      //To remove the last 2 occurrences of 'egg', we can reverse the array first.
+      const reverseFoods = foods.reverse();
+
+      const result = [];
+      let eggsRemoved = 0;
+
+
+      for (let i = 0; i < reverseFoods.length; i++) {
+        //if the string is 'egg', use continue to skip it.
+        if (reverseFoods[i] === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          continue; // Skip 'egg'
+        }
+        result.push(reverseFoods[i]); 
+      }
+      // Reverse the result array to restore original order.
+      return result.reverse();
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+</body>
+</html>
