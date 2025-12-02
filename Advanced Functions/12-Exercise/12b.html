@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise2</title>
+</head>
+<body>
+  <script>
+    //Creating a Function and storing it in a Variable
+    //creating a function that prints the sum of 2 + 3 which is 5 and
+    //store that function in a variable named add.
+    const add = function() {
+      console.log(2 + 3);
+    };
+    add();  // this runs the function twice each time printing 5 to the console
+    add();
+
+    //Creating a Function that Accepts a Function as an Argument.
+    // create a function named runTwice that accepts a function as an argument (named fun)
+    //runs that faction two times.
+    //In JavaScript, functions can be passed around like variables 
+    // which is a core concept called HIGHER-ORDER FUNCTIONS.
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    //Passing an inline Function
+    //Creating a one-time-use function (anonymous function).
+    //passing it directly into runTwice
+    runTwice(function() {
+      console.log('12b');
+    });
+
+    //Passing the add Function to Another Function
+    //Here we are passing the previously created add function into runTwice
+    //not calling it, just passing the function itself.
+    runTwice(add);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise4</title>
+</head>
+<body>
+  <!---
+  User clicks button
+  Button immediately changes to "Loading..."
+  JavaScript waits 1 second (without freezing the page)
+  Button text changes again to "Finished!"
+  --->
+
+  <button class="js-button" onclick="
+      updateButton();
+    ">Start</button>
+
+  <script>
+    function updateButton() {
+      const button = document.querySelector('.js-button');
+
+      button.innerHTML = 'Loading...'; //Immediately change button text to 'Loading...'
+      setTimeout(function() {
+        button.innerHTML = 'Finished!';
+      }, 1000);  
+    }
+     
+        
+  </script>
+</body>
+</html>
