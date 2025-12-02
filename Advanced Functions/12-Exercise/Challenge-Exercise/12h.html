@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge-Exercise2</title>
+</head>
+<body>
+
+  <!--
+  <button onclick="
+      messages++;
+    ">Add</button>
+
+  <button onclick="
+       messages--;
+    ">Remove</button>
+  -->
+
+  <!--Another option prevents negative and updates immediately-->
+
+  <button id="add">Add</button>
+  <button id="remove">Remove</button>
+  
+  <script>
+    let messages = 2;
+    const addBtn = document.getElementById('add');
+    const removeBtn = document.getElementById('remove');
+
+    addBtn.addEventListener('click', function() {
+      messages++;
+      updateTitleImmediate();
+    });
+
+    removeBtn.addEventListener('click', () => {
+      messages = Math.max(0, messages - 1); // Prevent negative values
+      updateTitleImmediate();
+    });
+
+    function updateTitleImmediate() {
+      document.title = `(${messages}) New messages`;
+    }
+
+    setInterval(() => {
+      document.title = (document.title === 'App') ? `(${messages}) New messages` : 'App';
+    }, 1000);
+    /*
+    let messages = 2;
+
+    setInterval(function() {
+      if (document.title === 'App') {
+        document.title = `(${messages}) New messages`;
+      } else {
+        document.title = 'App'
+      }
+    }, 1000);
+    */
+  </script>
+
+</body>
+</html>

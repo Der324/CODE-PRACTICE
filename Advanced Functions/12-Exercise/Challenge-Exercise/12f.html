@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge-Exercise1</title>
+</head>
+<body>
+
+  <button class="js-button" onclick="
+      displayMessage();
+    ">Add to cart</button>
+
+    
+    <p class="js-message"></p> 
+
+  <script>
+    let timeoutId; // Variable to store the timeout ID
+
+    function displayMessage() {
+      const messageElement = document.querySelector('.js-message');
+      messageElement.innerHTML = 'Added to cart!';
+
+      // First, cancel the previous timeout so that the message doesn't disappear too soon.
+
+      clearTimeout(timeoutId); // Clear any existing timeout
+    
+      timeoutId = setTimeout(function() {
+        messageElement.innerHTML = '';
+      }, 2000);  
+    }
+     
+        
+  </script>
+</body>
+</html>
