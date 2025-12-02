@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <script>
+    /* Advanced Functions in JavaScript!!
+    function greeting() {
+      console.log("Hello, welcome to advanced functions!");
+    }
+    greeting();
+
+    // Advanced feature of a function (function are values)
+
+    const function1 = function() // anonymous function  {
+      console.log("Hello from function1!"); //saving a function in a variable
+    }
+
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    //Method(saving a function in an object)
+    const object1 = {
+      num: 8,
+      fun: function() {
+        console.log('Hello from object1.fun!');
+      }
+    };
+    object1.fun();
+
+    //passing a value into a function
+
+    function display(param) {
+      console.log(param);
+    }
+    display(2); //passing a value 2 into the function display(param)
+
+
+    //passing a function into another function
+
+    function run(param) {
+      param();
+
+    }
+    run(function() {
+      console.log("Hello from the passed function!"); 
+      //Passing an anonymous function into run(param).
+      //The function we passing in is called a callback function.
+    } );
+    //In summarry, functions are values that can be stored in variables, objects, and passed as arguments to other functions.
+    */
+
+    /*
+    //setTimeout function
+    //allows us to run a function after a specified delay (in milliseconds) or in the future.
+    //setTimeout function is a built-in function in JavaScript.
+
+    setTimeout(function() {
+      console.log("This message is displayed after 4 seconds");
+      console.log("This message is displayed after 4 seconds");
+      //Synchronous Code: code that runs in sequence, one after the other.
+    
+    }, 4000) //5000 milliseconds = 5 seconds.
+
+    console.log("This message is displayed immediately");
+    //The setTimeout function is asynchronous, meaning it doesn't block the execution of other code while waiting for the delay to complete.
+
+    //setInterval function
+    //setInterval function allows us to run a function repeatedly at specified intervals (in milliseconds).
+
+    setInterval(function() {
+      console.log("This message is displayed every 3 seconds");
+      //This message will be displayed every 3 seconds indefinitely until the interval is cleared.
+    }, 3000); //3000 milliseconds = 3 seconds.
+
+    console.log("This message is displayed immediately again");
+    */
+
+    //Another way to loop through an array using forEach method.
+    //forEach() method is a built-in method in JavaScript that allows us to iterate over each element in an array and perform a specified action for each element.
+    //It is also the preferred way to loop through an array in JavaScript.
+
+    [
+      'make dinner',
+      'clean room',
+      'study javascript',
+    ].forEach(function(value, index) {
+      if (value === 'clean room') {
+        return; 
+        //The return statement here will skip the current iteration when the value is 'clean room'.
+        //The return statement in forEach function does work like continue in a traditional loop (for loop, while loop).
+        //Breake does not work in forEach function.
+      }
+      console.log(index);
+      console.log(value);
+
+    });
+    
+  </script>
+</body>
+</html>
