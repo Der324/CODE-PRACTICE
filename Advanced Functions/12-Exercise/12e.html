@@ -6,6 +6,11 @@
   <title>Exercise4</title>
 </head>
 <body>
+  <!--
+  Click button
+  Message appears below the button: "Added to cart!"
+  After 2 seconds, the message disappears
+  -->
 
   <button class="js-button" onclick="
       displayMessage();
@@ -17,6 +22,8 @@
   <script>
     function displayMessage() {
       const messageElement = document.querySelector('.js-message');
+
+      //doesn't show message in <p>, instead you're replacing the button's text not the message area.
       messageElement.innerHTML = 'Added to cart!';
 
     
