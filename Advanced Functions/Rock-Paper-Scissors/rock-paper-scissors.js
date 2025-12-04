@@ -20,10 +20,17 @@
     let isAutoPlaying = false; 
     let intervalId;//to store the interval ID so we can clear it later
     
+    //const autoPlay = () => {
 
+    //}; 
+
+    //It's better to use regular function than using arrow function above here,
+    // because it's easier to read and understand for this case.
+    // the regular function enable the use of Hoisting which means we can call the function before its declaration and no need to worry about the order of the code.
+    
     function autoPlay() {
       if (!isAutoPlaying) {
-        intervalId = setInterval(function() {
+        intervalId = setInterval(() => { //we use arrow function => here for cleaner syntax and easy to ready.
           const playerMove = pickComputerMove();
           playGame(playerMove);
         }, 1000); 
@@ -35,6 +42,55 @@
       }
     }
 
+    document.querySelector('.js-rock-button')
+      .addEventListener('click', () => {
+        playGame('rock');
+      });
+
+    document.querySelector('.js-paper-button')
+      .addEventListener('click', () => {
+        playGame('paper');
+      });
+
+    document.querySelector('.js-scissors-button')
+      .addEventListener('click', () => {
+        playGame('scissors');
+      });
+
+    document.querySelector('.js-auto-play-button')
+      .addEventListener('click', () => {
+        autoPlay();
+      });
+
+      //Created a new resetScore function so
+      // we can reuse this code.
+      function resetScore() {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+      }
+
+      //Add an event listener for the reset score
+      //button using .addEventListener
+      document.querySelector('.js-reset-score-button')
+        .addEventListener('click', () => {
+          resetScore();
+        });
+
+
+        //using .addEventListener with a different type of event keydown.
+        //keydown allows you to use a keyboard to play the game.
+    document.body.addEventListener('keydown', (event) => {
+      if (event.key === 'r') {
+        playGame('rock');
+      }else if (event.key === 'p') {
+        playGame('paper');
+      }else if (event.key === 's') {
+        playGame('scissors')
+      }
+    });
 
     function playGame(playerMove) {
       const computerMove = pickComputerMove();

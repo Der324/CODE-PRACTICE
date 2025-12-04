@@ -6,7 +6,32 @@
   <title>Advanced Functions</title>
 </head>
 <body>
+  <button onclick="
+    "class="js-button">Click</button>
+
   <script>
+    const buttonElement = document.querySelector('.js-button');
+
+    //.addEventListener () lets us run some code when weinteract with the element.
+    //we are using an arrow function => as the second argument to .addEventListener() method.
+    //It's recommended to use .addEventListener() instead of using onclick="" attribute in HTML.
+    
+    const eventListener = () => {
+      console.log('click');
+    };
+
+    buttonElement.addEventListener('click', eventListener);
+
+    // we can also remove an event listener using .removeEventListener() method.
+    buttonElement.removeEventListener('click', eventListener);
+
+    //.addEventListener () lets us use multiple event listeners for an event.
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    });
+
+
+
     /* Advanced Functions in JavaScript!!
     function greeting() {
       console.log("Hello, welcome to advanced functions!");
@@ -84,6 +109,8 @@
     //forEach() method is a built-in method in JavaScript that allows us to iterate over each element in an array and perform a specified action for each element.
     //It is also the preferred way to loop through an array in JavaScript.
 
+
+    /*
     [
       'make dinner',
       'clean room',
@@ -99,7 +126,74 @@
       console.log(value);
 
     });
+    */
+
+
+    /*
+    // A shorter way to write functions using arrow function syntax (ES6 feature).
+    //Arrow functions provide a more concise syntax for writing functions.
+    //They are especially useful for writing small, single-expression functions.
+    // Arrow functions almost work as regular functions, but there are some differences in behavior, especially with the this keyword.
+
+    const regularFunction = function(param, param2) {
+      console.log("Hello from regular function!");
+      return 5;
+    };
+    regularFunction();
+
+
+    const arrowFunction = (param, param2) => {
+      console.log("Hello from arrow function!");
+      return 5;
+    }
+    arrowFunction();
+
+    // Arrow Function => have a few shortcuts that regular functions do not have.
+    // When an arrow function has only one parameter, you can omit the parentheses around() the parameter.
+
+    const oneParam = param => {
+      console.log(param + 1);
+    };
+    oneParam(4);
+
+    // When an arrow function has a single expression in its body, you can omit the curly braces{} and the return keyword.
+     // If an arrow function has no parameters, you must include empty parentheses().
+
+    const oneLine = () => 4 + 5;
+    console.log(oneLine());
+
+    // Using arrow function in forEach method.
+    // passing a function into another function (forEach method), it's recommended to use arrow function => for better readability.
+    [
+      'make dinner',
+      'clean room',
+      'study javascript',
+    ].forEach((value, index) => {
+      if (value === 'clean room') {
+        return; 
+      
+      }
+      console.log(index);
+      console.log(value);
+
+    });
     
+
+    //using arrow function => in an object method
+
+    const object2 = {
+      method: () => {
+        
+      },
+      method() { 
+        // this is called a shorthand method syntax in an object.
+        // When saving a function in an object, it's better to use  this shorthand method syntax for better readability than using arrow function =>.
+
+      }
+    };
+    */
+
+
   </script>
 </body>
 </html>
