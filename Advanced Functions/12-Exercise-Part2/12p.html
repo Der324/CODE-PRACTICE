@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12p-Exercise</title>
+</head>
+<body>
+  <!--
+  updated code using arrow function =>
+  -->
+
+  <button class="js-button" onclick="
+      updateButton();
+    ">Start</button>
+  <script>
+    function updateButton() {
+      const button = document.querySelector('.js-button');
+
+      //The function below was changed
+      //to an arrow function
+      setTimeout(() => {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -22,7 +22,10 @@
       const button = document.querySelector('.js-button');
 
       button.innerHTML = 'Loading...'; //Immediately change button text to 'Loading...'
-      setTimeout(function() {
+      //updated the function with arrow function =>
+      //setTimeout(function()
+
+      setTimeout(() => { // updated version
         button.innerHTML = 'Finished!';
       }, 1000);  
     }

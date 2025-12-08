@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12o-Exercise</title>
+</head>
+<body>
+  <script>
+    //remove the first 2 eggs from the array.
+    //using .filter()
+    function removeEgg(foods) {
+      let eggsRemoved = 0;
+
+      return foods.filter((food) => {
+          // If the food is 'egg', we should return false
+          // but only if we haven't removed 2 eggs already.
+
+        if (food === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+  </script>
+</body>
+</html>
