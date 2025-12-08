@@ -56,11 +56,18 @@
   document.querySelectorAll('.js-delete-todo-button')
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
+        //console.log(index);
+        /*
+        Closure
+        if a function has access to value, it will always have access to that value
+        value gets packaged together(enclosed) with the function.
+        */
         todoList.splice(index, 1);
         renderTodoList();
       });
-
     });
+    //As soon as .foreach() loop ends index doesn't exist anywhere
+    //console.log(index);
 
   }
   
