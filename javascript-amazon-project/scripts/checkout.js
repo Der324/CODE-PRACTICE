@@ -25,7 +25,7 @@ cart.forEach((cartItem) => {
         </div>
 
         <div class="cart-item-details-grid">
-          <img class= product-image src="${matchingProduct.image}" alt="athletic-cotton-socks-6-pairs">
+          <img class= "product-image" src="${matchingProduct.image}" alt="athletic-cotton-socks-6-pairs">
 
           <div class="cart-item-details">
             <div class="product-name">
@@ -115,5 +115,17 @@ document.querySelectorAll('.js-delete-link')
       container.remove();
     });
   });
+
+
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-checkout-items')
+    .innerHTML = `${cartQuantity} items`;
+
+
 
 
