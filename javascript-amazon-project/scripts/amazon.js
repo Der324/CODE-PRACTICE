@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js';
+import {cart, addToCart, calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
@@ -10,7 +10,7 @@ products.forEach((product) => {
     <div class="product-container">
       <div class="product-image-container">
         <img class="product-image"
-          src="${product.image}" alt="athletic-cotton-socks-6-pairs">
+          src="${product.image}" alt="${product.name}">
       </div>
 
       <div class="product-name limit-text-to-2-lines">
@@ -63,16 +63,9 @@ document.querySelector('.js-products-grid').
 innerHTML = productsHTML;
 
 
-
-
 function updateCartQuantity() {
-  let cartQuantity = 0;
-
-    cart.forEach((cartItem) => {
-      cartQuantity += cartItem.quantity;
-    });
-
-    const cartQuantityElement = document.querySelector('.js-cart-quantity');
+  const cartQuantity = calculateCartQuantity();
+  const cartQuantityElement = document.querySelector('.js-cart-quantity');
       //.innerHTML = cartQuantity;
 
     if (cartQuantity === 0) {
