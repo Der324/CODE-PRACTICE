@@ -12,7 +12,7 @@ const today = dayjs();
 const deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM D'));
 
-//function renderOrderSummary() {
+function renderOrderSummary() {
 
   let cartSummaryHTML = '';
 
@@ -250,9 +250,9 @@ console.log(deliveryDate.format('dddd, MMMM D'));
           renderOrderSummary();
         });
       });
-  //}
+  }
 
-  //renderOrderSummary();
+  renderOrderSummary();
   
 
 
