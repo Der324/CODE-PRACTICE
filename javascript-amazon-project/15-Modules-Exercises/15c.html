@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAYJS</title>
+</head>
+<body>
+  
+  <script type = "module">
+
+  // Subtract 2 months from today's date and log it in 'MMMM D' format
+
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
+
+    const today = dayjs();
+    const date = today.subtract(2, 'months');
+    console.log(date.format('MMMM D'));
+
+  </script>
+  
+</body>
+</html>

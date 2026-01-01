@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAYJS</title>
+</head>
+<body>
+  <script type = "module">
+    //Using DAYJS, create a function that checks if a given date is a weekend (Saturday or Sunday).
+    //Test the function with today's date and the next three days, logging the results to the console.
+
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
+    function isWeekend(date) {
+      const dayOfWeek = date.format('dddd');
+      return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+
+    }
+
+      let date = dayjs();
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(2, 'days');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(4, 'days');
+      console.log(date.format('dddd, MMMM D')); 
+      console.log(isWeekend(date));
+
+      date = dayjs().add(6, 'days');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+  </script>
+</body>
+</html>
