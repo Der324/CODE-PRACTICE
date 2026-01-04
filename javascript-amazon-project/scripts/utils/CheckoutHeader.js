@@ -17,9 +17,8 @@ export function renderCheckoutHeader() {
       </div>
       <div class="checkout-header-middle-section">
         Checkout (
-        <a class="return-to-cart-link" href="amazon.html">
-          <span class="js-checkout-items"></span>
-        </a>
+         <a class="return-to-cart-link" href="amazon.html">
+         <span class="js-checkout-items"></span>
         )
       </div>
       <div class="checkout-header-right-section">

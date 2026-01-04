@@ -1,7 +1,7 @@
 import {cart, removeFromCart, calculateCartQuantity, updateQuantity, updateDeliveryOption} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import { formatCurrency} from '../utils/money.js'; //named import
-import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
+import {deliveryOptions, getDeliveryOption, calculateDeliveryDate} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
 
 /**
@@ -28,10 +28,7 @@ export function renderOrderSummary() {
   cart.forEach((cartItem) => {
     const product = getProduct(cartItem.productId);
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
-
-    const deliveryDate = dayjs()
-      .add(deliveryOption.deliveryDays, 'days')
-      .format('dddd, MMMM D');
+    const deliveryDate = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML += `
       <div class="cart-item-container js-cart-item-container-${product.id}">
@@ -90,9 +87,9 @@ export function renderOrderSummary() {
     `;
   });
 
-  document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
+  document.querySelector('.js-order-summary')
+    .innerHTML = cartSummaryHTML;
   updateCartQuantityUI();
-
   attachEventListeners();
 }
 
@@ -102,9 +99,7 @@ function renderDeliveryOptions(product, cartItem) {
   let html = '';
 
   deliveryOptions.forEach((option) => {
-    const dateString = dayjs()
-      .add(option.deliveryDays, 'days')
-      .format('dddd, MMMM D');
+    const dateString = calculateDeliveryDate(option);
 
     const priceString =
       option.priceCents === 0
