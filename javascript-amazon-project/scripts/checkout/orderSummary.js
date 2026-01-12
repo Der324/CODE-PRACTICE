@@ -111,11 +111,14 @@ function renderDeliveryOptions(product, cartItem) {
 
     html += `
       <div
-        class="delivery-option js-delivery-option"
+        class="delivery-option 
+        js-delivery-option
+        js-delivery-option-${product.id}-${option.id}"
         data-product-id="${product.id}"
         data-delivery-option-id="${option.id}">
         <input
           type="radio"
+          class="js-delivery-option-input-${product.id}-${option.id}"
           ${option.id === cartItem.deliveryOptionId ? 'checked' : ''}
           name="delivery-option-${product.id}">
         <div>
