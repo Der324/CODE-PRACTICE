@@ -12,11 +12,11 @@ export function renderPaymentSummary() {
 
   cart.forEach((cartItem) => {
     const product = getProduct(cartItem.productId);
-    product.priceCents * cartItem.quantity;
+    //product.priceCents * cartItem.quantity;
     productPriceCents += product.priceCents * cartItem.quantity;
 
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
-    shippingPriceCents += deliveryOption.priceCents
+    shippingPriceCents += deliveryOption.priceCents * cartItem.quantity
 
   });
  const cartQuantity = calculateCartQuantity();
