@@ -2,23 +2,26 @@ import { validDeliveryOption } from "./deliveryOptions.js";
 
 /* Object-Oriented Programming = organizing the code into obojects
   (trying to mimic the real world senario)
-
   Class = helps to generate these objects.(it is an object generator)
+  Class used to create both private properties and methods
 */
 
 // Using class in Object-Oriented Programming OOP
 
 class Cart {
   cartItems;
-  localStorageKey;
+  #localStorageKey; 
+  //add # makes localStorageKey private 
+  // meaning it can not be used outside the class.
 
   constructor(localStorageKey) {
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+    // used private method '#'
+  #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if (!this.cartItems) {
       this.cartItems = [{
@@ -38,7 +41,7 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId) {
@@ -133,9 +136,6 @@ class Cart {
 
 const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
-
-
-
 
 console.log(cart);
 console.log(businessCart);
