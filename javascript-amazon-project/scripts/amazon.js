@@ -43,6 +43,8 @@ products.forEach((product) => {
           <option value="10">10</option>
         </select>
       </div>
+      <!--ploymorphism = used method without knowin the class-->
+      ${product.extraInfoHTML()}
 
       <div class="product-spacer"></div>
 
