@@ -9,3 +9,5 @@
 17d. add isTrunkOpen property, which tracks is the car's trunk is open should be a boolean property(true=open, false=closed) Create openTrunk() and closeTrunk(), which opens/ closes the trunk. openTrunk() should not work if the trunk is open go() should not work if the trunk is open Update displayInfo() to display trunk info at the end. Try the code.
 
 17e. Create a new class RaceCar which extends car. Race cars go faster than normal cars, so the racecar has an additional property acceleration instead of 5, and update the top speed to 300. Race cars do not have trunk. Update openTrunk() and CloseTrunk() Create a race car {brand: 'Mclaren', model: 'F1', acceleration: 20} try the code.
+
+17f. Make brand and model properties private (just should not be able to change the brand and model of a car!) Update displayInfo() with the private properties, and try the code.

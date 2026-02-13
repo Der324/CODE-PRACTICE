@@ -1,6 +1,7 @@
 import Car5 from './car5.js';
+import Car7 from './car7.js';
 
-export default class RaceCar extends Car5 {
+export default class RaceCar extends Car7 {
   constructor(brand, model, acceleration) {
     super(brand, model)
     this.acceleration = acceleration;
@@ -8,6 +9,10 @@ export default class RaceCar extends Car5 {
 
   go() {
     this.speed = Math.min(this.speed + this.acceleration, 300);
+
+    // Property #speed is not accessible outside class Car7 because
+    // it has a private identifier
+    //this.#speed += this.acceleration; 
   }
 
   openTrunk() {
