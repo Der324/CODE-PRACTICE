@@ -11,3 +11,5 @@
 17e. Create a new class RaceCar which extends car. Race cars go faster than normal cars, so the racecar has an additional property acceleration instead of 5, and update the top speed to 300. Race cars do not have trunk. Update openTrunk() and CloseTrunk() Create a race car {brand: 'Mclaren', model: 'F1', acceleration: 20} try the code.
 
 17f. Make brand and model properties private (just should not be able to change the brand and model of a car!) Update displayInfo() with the private properties, and try the code.
+
+17g. Now, try making the speed property private. Update the rest of the code and try the code. NOtice the code doesn't work because the RaceCar class cannot access the private #speed property (private properties can only be accessed in the same class. They can't be accessed in a child class) Therefore, we'll have to change speed back to public. In other languages, a property can be public, private, or protected(protected = it can be accessed inside a class and its child classes) Object-Oriented Programming is less popular in Javascript because is missing some feature of OOP, like protected properties.
