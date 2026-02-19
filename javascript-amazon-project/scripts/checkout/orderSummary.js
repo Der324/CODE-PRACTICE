@@ -3,6 +3,7 @@ import { getProduct } from '../../data/products.js';
 import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '../../data/deliveryOptions.js';
 import { formatCurrency } from '../utils/money.js';
 import { renderPaymentSummary } from './paymentSummary.js';
+import { renderCheckoutHeader } from '../utils/CheckoutHeader.js';
 
 
 export function renderOrderSummary() {
@@ -163,11 +164,12 @@ function saveQuantity(productId) {
   updateUI();
 }
 
+/*
 function renderCheckoutHeader() {
   const checkoutItems = document.querySelector('.js-checkout-items');
   if (!checkoutItems) return;
-  checkoutItems.innerHTML = calculateCartQuantity();
-}
+  checkoutItems.innerHTML = `${calculateCartQuantity()} Items`;
+}*/
 
 function updateUI() {
   renderCheckoutHeader();

@@ -32,7 +32,7 @@ function renderProductsGrid () {
         </div>
 
         <div class="product-quantity-container">
-          <select>
+          <select class="js-quantity-selector">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -63,9 +63,21 @@ function renderProductsGrid () {
     `;
   });
 
-  document.querySelector('.js-products-grid').
-  innerHTML = productsHTML;
+  document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+  attachAddToCartEvents();
+  renderCartQuantity();
+};
+
+  function renderCartQuantity() {
+    const cartQuantityElement = document.querySelector('.js-cart-quantity');
+    if (!cartQuantityElement) return;
+
+    cartQuantityElement.innerText = calculateCartQuantity();
+  }
+  
+
+  /*
   function updateCartQuantity() {
     let cartQuantity = 0;
 
@@ -75,18 +87,47 @@ function renderProductsGrid () {
 
     document.querySelector('.js-cart-quantity')
       .innerHTML = cartQuantity;
+  }*/
+  function attachAddToCartEvents() {
+    document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+      button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+
+        const productContainer = button.closest('.product-container');
+        const quantitySelector = productContainer.querySelector('.js-quantity-selector');
+        const quantity = Number(quantitySelector.value);
+
+        addToCart(productId, quantity);
+
+        renderCartQuantity();
+        showAddedMessage(productContainer);
+      });
+    });
+  };
+
+  function generateQuantityOption() {
+    let options = '';
+
+    for (let i = 1; i <= 10; i++) {
+      options += `<option value = "${i}">${i}</option>`;
+    }
+
+    return options;
   }
 
-  document.querySelectorAll('.js-add-to-cart')
-  .forEach((button) => {
-    button.addEventListener('click', () => {
-      const productId = button.dataset.productId;
-      addToCart(productId);
-      cart.addToCart(productId);
-      updateCartQuantity();
-    });
-  });
-};
+  function showAddedMessage(container) {
+    const addedMessage = container.querySelector('.added-to-cart');
+    if (!addedMessage) return;
+
+    addedMessage.classList.add('visible');
+
+    setTimeout(() => {
+      addedMessage.classList.remove('visible');
+    }, 1500);
+  }
+  
+ 
+
 
 
 /*function updateCartQuantity() {
