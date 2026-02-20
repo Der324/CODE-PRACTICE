@@ -9,13 +9,24 @@ import { loadCart } from "../data/cart.js";
 
 
 async function loadPage() {
-  await loadProductsFetch();
+  try {
+    // throw 'error1';
+    await loadProductsFetch();
 
-  await new Promise((resolve)=> {
+  await new Promise((resolve, reject)=> {
+
+    // throw 'error2';
     loadCart(() => {
+      // reject('error3') used in the future
+      
       resolve('value3');
     });
   });
+
+  } catch (error) {
+    console.log('Unexpected error. PLease try again later.');
+  }
+
 
   renderCheckoutHeader();
   renderOrderSummary();
